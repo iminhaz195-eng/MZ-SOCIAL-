@@ -1,0 +1,8 @@
+video_posts
+ └── postId
+      ├── userId
+      ├── videoUrl
+      ├── caption
+      ├── createdAt
+      ├── likes
+      └── comments
