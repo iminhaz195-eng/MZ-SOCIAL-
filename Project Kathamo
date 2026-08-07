@@ -1,0 +1,17 @@
+MZSocial/
+├── app/
+│   ├── ui/
+│   │   ├── auth/
+│   │   ├── home/
+│   │   ├── profile/
+│   │   ├── chat/
+│   │   ├── reels/
+│   │   ├── stories/
+│   │   └── settings/
+│   ├── data/
+│   ├── domain/
+│   ├── repository/
+│   ├── viewmodel/
+│   └── MainActivity.kt
+├── gradle/
+└── google-services.json
