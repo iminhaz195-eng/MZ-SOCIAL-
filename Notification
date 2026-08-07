@@ -1,0 +1,9 @@
+notifications
+ └── notificationId
+      ├── receiverId
+      ├── senderId
+      ├── type
+      ├── title
+      ├── body
+      ├── isRead
+      └── createdAt
