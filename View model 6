@@ -1,0 +1,8 @@
+class ImageMessageViewModel(
+    private val repository: ImageMessageRepository
+) : ViewModel() {
+
+    fun sendImage() {
+        repository.sendImageMessage()
+    }
+}
