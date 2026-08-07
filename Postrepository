@@ -1,0 +1,11 @@
+class CreatePostRepository(
+    private val firestore: FirebaseFirestore,
+    private val storage: FirebaseStorage
+) {
+    suspend fun uploadPost(post: Post) {
+        firestore.collection("posts")
+            .document(post.postId)
+            .set(post)
+            .await()
+    }
+}
