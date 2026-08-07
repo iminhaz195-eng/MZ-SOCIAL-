@@ -1,0 +1,13 @@
+App Start
+   │
+User Logged In?
+   │
+ ├── Yes → Home
+ └── No → Login
+          │
+      Register/Login
+          │
+ Email Verified?
+          │
+ ├── Yes → Home
+ └── No → Verify Email
