@@ -1,0 +1,12 @@
+class ForgotPasswordViewModel(
+    private val repository: ForgotPasswordRepository
+) : ViewModel() {
+
+    fun sendReset(
+        email: String,
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit
+    ) {
+        repository.resetPassword(email, onSuccess, onError)
+    }
+}
