@@ -1,0 +1,11 @@
+class UploadVideoRepository(
+    private val storage: FirebaseStorage,
+    private val firestore: FirebaseFirestore
+) {
+
+    fun uploadVideo() {
+        // Upload video to Firebase Storage
+        // Get download URL
+        // Save VideoPost to Firestore
+    }
+}
