@@ -1,0 +1,6 @@
+ui/
+└── auth/
+     ├── VerifyEmailActivity.kt
+     ├── VerifyEmailViewModel.kt
+     ├── VerifyEmailRepository.kt
+     └── activity_verify_email.xml
