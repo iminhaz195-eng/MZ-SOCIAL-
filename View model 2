@@ -1,0 +1,8 @@
+class LikeViewModel(
+    private val repository: LikeRepository
+) : ViewModel() {
+
+    fun toggle(postId: String, userId: String) {
+        repository.toggleLike(postId, userId)
+    }
+}
