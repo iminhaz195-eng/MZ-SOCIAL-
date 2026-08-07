@@ -1,0 +1,11 @@
+data class UserProfile(
+    val uid: String = "",
+    val name: String = "",
+    val username: String = "",
+    val profilePhoto: String = "",
+    val coverPhoto: String = "",
+    val bio: String = "",
+    val followersCount: Int = 0,
+    val followingCount: Int = 0,
+    val postCount: Int = 0
+)
