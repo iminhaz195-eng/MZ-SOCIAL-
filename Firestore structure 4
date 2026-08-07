@@ -1,0 +1,8 @@
+comments
+ └── postId
+      └── commentId
+           ├── userId
+           ├── username
+           ├── text
+           ├── createdAt
+           └── edited
