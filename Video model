@@ -1,0 +1,9 @@
+data class VideoPost(
+    val postId: String = "",
+    val userId: String = "",
+    val videoUrl: String = "",
+    val caption: String = "",
+    val createdAt: Long = System.currentTimeMillis(),
+    val likes: Int = 0,
+    val comments: Int = 0
+)
