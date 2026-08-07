@@ -1,0 +1,29 @@
+MZSocial/
+│
+├── app/
+│
+├── data/
+│   ├── model/
+│   ├── remote/
+│   ├── local/
+│   └── repository/
+│
+├── ui/
+│   ├── splash/
+│   ├── auth/
+│   ├── home/
+│   ├── profile/
+│   ├── chat/
+│   ├── reels/
+│   ├── stories/
+│   ├── search/
+│   ├── notification/
+│   └── settings/
+│
+├── viewmodel/
+│
+├── adapter/
+│
+├── utils/
+│
+└── MainActivity.kt
