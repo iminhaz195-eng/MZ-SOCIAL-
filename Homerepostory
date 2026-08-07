@@ -1,0 +1,8 @@
+class HomeRepository(
+    private val firestore: FirebaseFirestore
+) {
+
+    fun getPosts() =
+        firestore.collection("posts")
+            .orderBy("createdAt", Query.Direction.DESCENDING)
+}
