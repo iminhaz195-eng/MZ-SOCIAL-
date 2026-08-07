@@ -1,0 +1,41 @@
+class VerifyEmailActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_verify_email)
+
+        auth = FirebaseAuth.getInstance()
+
+        val resend = findViewById<Button>(R.id.btnResend)
+        val continueBtn = findViewById<Button>(R.id.btnContinue)
+
+        resend.setOnClickListener {
+            auth.currentUser?.sendEmailVerification()
+        }
+
+        continueBtn.setOnClickListener {
+
+            auth.currentUser?.reload()
+
+            if (auth.currentUser?.isEmailVerified == true) {
+
+                startActivity(
+                    Intent(this, HomeActivity::class.java)
+                )
+
+                finish()
+
+            } else {
+
+                Toast.makeText(
+                    this,
+                    "Please verify your email first.",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
+        }
+    }
+}
