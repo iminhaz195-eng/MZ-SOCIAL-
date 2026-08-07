@@ -1,0 +1,10 @@
+class CreatePostViewModel(
+    private val repository: CreatePostRepository
+) : ViewModel() {
+
+    fun upload(post: Post) {
+        viewModelScope.launch {
+            repository.uploadPost(post)
+        }
+    }
+}
