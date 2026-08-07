@@ -1,0 +1,16 @@
+users
+   uid
+      name
+      email
+      profile
+      bio
+
+posts
+
+videos
+
+messages
+
+comments
+
+likes
