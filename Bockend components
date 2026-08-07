@@ -1,0 +1,18 @@
+MZ Social
+
+Android App (Kotlin)
+        │
+        ▼
+Firebase Authentication
+        │
+        ▼
+Cloud Firestore
+        │
+        ▼
+Firebase Storage
+        │
+        ▼
+Cloud Functions
+        │
+        ▼
+Firebase Cloud Messaging
