@@ -1,0 +1,6 @@
+ui/
+└── chat/
+     ├── VideoMessageActivity.kt
+     ├── VideoMessageViewModel.kt
+     ├── VideoMessageRepository.kt
+     └── activity_video_message.xml
