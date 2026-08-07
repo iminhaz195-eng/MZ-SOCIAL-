@@ -1,0 +1,7 @@
+ui/
+└── search/
+     ├── SearchActivity.kt
+     ├── SearchViewModel.kt
+     ├── SearchRepository.kt
+     ├── SearchAdapter.kt
+     └── activity_search.xml
