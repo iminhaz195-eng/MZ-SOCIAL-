@@ -1,0 +1,11 @@
+class VideoMessageRepository(
+    private val storage: FirebaseStorage,
+    private val firestore: FirebaseFirestore
+) {
+
+    fun sendVideoMessage() {
+        // Upload video to Firebase Storage
+        // Get download URL
+        // Save message to Firestore
+    }
+}
