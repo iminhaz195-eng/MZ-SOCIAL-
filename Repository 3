@@ -1,0 +1,12 @@
+class CommentRepository(
+    private val firestore: FirebaseFirestore
+) {
+
+    fun addComment(postId: String, comment: Comment) {
+        firestore.collection("comments")
+            .document(postId)
+            .collection("items")
+            .document(comment.commentId)
+            .set(comment)
+    }
+}
