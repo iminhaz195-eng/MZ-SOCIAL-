@@ -1,0 +1,6 @@
+ui/
+ ├── createpost/
+ │    ├── CreatePostActivity.kt
+ │    ├── CreatePostViewModel.kt
+ │    ├── CreatePostRepository.kt
+ │    └── activity_create_post.xml
