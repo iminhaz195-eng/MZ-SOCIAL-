@@ -1,0 +1,8 @@
+ui/
+ └── home/
+      ├── HomeActivity.kt
+      ├── HomeAdapter.kt
+      ├── HomeViewModel.kt
+      ├── HomeRepository.kt
+      ├── PostAdapter.kt
+      └── activity_home.xml
