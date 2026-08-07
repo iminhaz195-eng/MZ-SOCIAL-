@@ -1,0 +1,37 @@
+class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_register)
+
+        auth = FirebaseAuth.getInstance()
+
+        register.setOnClickListener {
+
+            auth.createUserWithEmailAndPassword(
+                email.text.toString(),
+                password.text.toString()
+            ).addOnSuccessListener {
+
+                val uid = auth.currentUser!!.uid
+
+                val user = hashMapOf(
+                    "uid" to uid,
+                    "name" to name.text.toString(),
+                    "email" to email.text.toString()
+                )
+
+                FirebaseFirestore.getInstance()
+                    .collection("users")
+                    .document(uid)
+                    .set(user)
+
+                startActivity(Intent(this, HomeActivity::class.java))
+                finish()
+
+            }
+        }
+    }
+}
