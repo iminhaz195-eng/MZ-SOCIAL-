@@ -1,0 +1,11 @@
+Post
+ ├── postId
+ ├── userId
+ ├── text
+ ├── mediaUrl
+ ├── mediaType
+ ├── privacy
+ ├── createdAt
+ ├── likeCount
+ ├── commentCount
+ └── shareCount
