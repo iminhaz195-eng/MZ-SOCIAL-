@@ -1,0 +1,8 @@
+holder.likeButton.setOnClickListener {
+
+    likeViewModel.toggle(
+        post.postId,
+        FirebaseAuth.getInstance().uid!!
+    )
+
+}
