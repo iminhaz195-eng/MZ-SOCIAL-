@@ -1,0 +1,17 @@
+chats
+ └── chatId
+      └── messages
+           └── messageId
+                ├── senderId
+                ├── receiverId
+                ├── type (text/image/video)
+                ├── message
+                ├── time
+                └── seen
+
+users
+ └── uid
+      ├── name
+      ├── profile
+      ├── online
+      └── lastSeen
