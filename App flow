@@ -1,0 +1,12 @@
+Splash
+   │
+Login/Register
+   │
+Email Verification
+   │
+Home Feed
+   ├── Stories
+   ├── Reels
+   ├── Search
+   ├── Chat
+   ├── Profile
