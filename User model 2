@@ -1,0 +1,6 @@
+data class SearchUser(
+    val uid: String = "",
+    val name: String = "",
+    val username: String = "",
+    val profilePhoto: String = ""
+)
