@@ -1,0 +1,10 @@
+class HomeViewModel(
+    private val repository: HomeRepository
+) : ViewModel() {
+
+    val posts = MutableLiveData<List<Post>>()
+
+    fun loadPosts() {
+        // Firestore Snapshot Listener
+    }
+}
