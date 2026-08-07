@@ -1,0 +1,19 @@
+Tap "Add Photo"
+        │
+Open Gallery
+        │
+User Selects Image
+        │
+Preview Image
+        │
+Tap POST
+        │
+Compress Image
+        │
+Upload to Firebase Storage
+        │
+Get Download URL
+        │
+Save Post to Firestore
+        │
+Return to Home Feed
