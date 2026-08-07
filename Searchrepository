@@ -1,0 +1,10 @@
+class SearchRepository(
+    private val firestore: FirebaseFirestore
+) {
+
+    fun searchUsers(query: String) =
+        firestore.collection("users")
+            .orderBy("username")
+            .startAt(query)
+            .endAt(query + "\uf8ff")
+}
