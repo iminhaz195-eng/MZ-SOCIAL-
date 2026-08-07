@@ -1,0 +1,8 @@
+ui/
+ └── chat/
+      ├── ChatActivity.kt
+      ├── ChatListActivity.kt
+      ├── ChatAdapter.kt
+      ├── ChatViewModel.kt
+      ├── ChatRepository.kt
+      └── activity_chat.xml
