@@ -1,0 +1,6 @@
+ui/
+└── chat/
+     ├── ImageMessageActivity.kt
+     ├── ImageMessageRepository.kt
+     ├── ImageMessageViewModel.kt
+     └── activity_image_message.xml
