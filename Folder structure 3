@@ -1,0 +1,6 @@
+ui/
+└── upload/
+     ├── UploadVideoActivity.kt
+     ├── UploadVideoViewModel.kt
+     ├── UploadVideoRepository.kt
+     └── activity_upload_video.xml
