@@ -1,0 +1,17 @@
+class VerifyEmailRepository(
+    private val auth: FirebaseAuth
+) {
+
+    fun sendVerification(
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit
+    ) {
+        auth.currentUser?.sendEmailVerification()
+            ?.addOnSuccessListener {
+                onSuccess()
+            }
+            ?.addOnFailureListener {
+                onError(it.message ?: "Unknown error")
+            }
+    }
+}
