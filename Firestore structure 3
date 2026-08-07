@@ -1,0 +1,10 @@
+posts
+ └── postId
+      ├── caption
+      ├── likeCount
+
+likes
+ └── postId
+      └── userId
+          ├── liked: true
+          └── timestamp
