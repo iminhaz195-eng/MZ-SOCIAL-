@@ -1,0 +1,6 @@
+users
+ └── uid
+      ├── name
+      ├── username
+      ├── profilePhoto
+      ├── bio
