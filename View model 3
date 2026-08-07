@@ -1,0 +1,8 @@
+class CommentViewModel(
+    private val repository: CommentRepository
+) : ViewModel() {
+
+    fun send(postId: String, comment: Comment) {
+        repository.addComment(postId, comment)
+    }
+}
