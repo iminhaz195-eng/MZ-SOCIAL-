@@ -1,0 +1,9 @@
+data class Story(
+    val storyId: String = "",
+    val userId: String = "",
+    val mediaUrl: String = "",
+    val mediaType: String = "",
+    val caption: String = "",
+    val createdAt: Long = System.currentTimeMillis(),
+    val expiresAt: Long = 0L
+)
