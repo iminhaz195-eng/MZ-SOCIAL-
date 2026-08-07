@@ -1,0 +1,10 @@
+data class VideoMessage(
+    val messageId: String = "",
+    val senderId: String = "",
+    val receiverId: String = "",
+    val videoUrl: String = "",
+    val caption: String = "",
+    val duration: Long = 0L,
+    val timestamp: Long = System.currentTimeMillis(),
+    val seen: Boolean = false
+)
