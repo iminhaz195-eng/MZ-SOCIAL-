@@ -1,0 +1,8 @@
+data class Post(
+    val postId: String = "",
+    val userId: String = "",
+    val mediaUrl: String = "",
+    val mediaType: String = "", // "image" বা "video"
+    val caption: String = "",
+    val timestamp: Long = System.currentTimeMillis()
+)
