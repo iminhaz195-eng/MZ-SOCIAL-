@@ -1,0 +1,11 @@
+class VerifyEmailViewModel(
+    private val repository: VerifyEmailRepository
+) : ViewModel() {
+
+    fun resendEmail(
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit
+    ) {
+        repository.sendVerification(onSuccess, onError)
+    }
+}
