@@ -1,0 +1,13 @@
+Select Video
+      │
+Preview Video
+      │
+Compress Video (optional)
+      │
+Upload Firebase Storage
+      │
+Get Download URL
+      │
+Save Firestore Message
+      │
+Receiver Can Play Video
