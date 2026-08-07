@@ -1,0 +1,12 @@
+chats
+ └── chatId
+      └── messages
+           └── messageId
+                ├── senderId
+                ├── receiverId
+                ├── type = "video"
+                ├── videoUrl
+                ├── caption
+                ├── duration
+                ├── timestamp
+                └── seen
