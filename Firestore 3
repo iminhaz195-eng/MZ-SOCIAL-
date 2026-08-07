@@ -1,0 +1,11 @@
+users
+ └── uid
+      ├── name
+      ├── username
+      ├── profilePhoto
+      ├── coverPhoto
+      ├── bio
+      ├── followersCount
+      ├── followingCount
+      ├── postCount
+      └── verified
