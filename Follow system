@@ -1,0 +1,7 @@
+followers
+ └── userId
+      └── followerId
+
+following
+ └── userId
+      └── followingId
