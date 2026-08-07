@@ -1,0 +1,19 @@
+posts
+ └── postId
+      ├── userId
+      ├── mediaUrl
+      ├── caption
+      ├── likeCount
+      ├── commentCount
+      └── timestamp
+
+likes
+ └── postId
+      └── userId
+
+comments
+ └── postId
+      └── commentId
+           ├── userId
+           ├── text
+           └── timestamp
