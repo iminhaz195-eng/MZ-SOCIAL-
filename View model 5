@@ -1,0 +1,8 @@
+class UploadVideoViewModel(
+    private val repository: UploadVideoRepository
+) : ViewModel() {
+
+    fun upload() {
+        repository.uploadVideo()
+    }
+}
