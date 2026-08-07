@@ -1,0 +1,6 @@
+ui/
+└── auth/
+     ├── ForgotPasswordActivity.kt
+     ├── ForgotPasswordViewModel.kt
+     ├── ForgotPasswordRepository.kt
+     └── activity_forgot_password.xml
