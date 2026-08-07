@@ -1,0 +1,8 @@
+class VideoMessageViewModel(
+    private val repository: VideoMessageRepository
+) : ViewModel() {
+
+    fun sendVideo() {
+        repository.sendVideoMessage()
+    }
+}
