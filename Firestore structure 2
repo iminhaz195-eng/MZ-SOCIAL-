@@ -1,0 +1,10 @@
+posts
+ └── postId
+      ├── userId
+      ├── mediaUrl
+      ├── mediaType
+      ├── caption
+      ├── likeCount
+      ├── commentCount
+      ├── shareCount
+      └── createdAt
