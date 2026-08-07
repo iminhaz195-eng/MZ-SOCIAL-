@@ -1,0 +1,18 @@
+MZSocial/
+│
+├── app/
+│   ├── ui/
+│   │   ├── auth/
+│   │   ├── home/
+│   │   ├── profile/
+│   │   ├── chat/
+│   │   ├── upload/
+│   │   └── settings/
+│   │
+│   ├── model/
+│   ├── repository/
+│   ├── viewmodel/
+│   ├── utils/
+│   └── MainActivity.kt
+│
+└── build.gradle
