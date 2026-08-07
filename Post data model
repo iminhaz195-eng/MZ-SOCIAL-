@@ -1,0 +1,10 @@
+data class Post(
+    val postId: String = "",
+    val userId: String = "",
+    val caption: String = "",
+    val mediaUrl: String = "",
+    val mediaType: String = "",
+    val createdAt: Long = System.currentTimeMillis(),
+    val likes: Int = 0,
+    val comments: Int = 0
+)
