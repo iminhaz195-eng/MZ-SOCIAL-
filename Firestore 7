@@ -1,0 +1,11 @@
+chats
+ └── chatId
+      └── messages
+           └── messageId
+                ├── senderId
+                ├── receiverId
+                ├── type = "image"
+                ├── imageUrl
+                ├── caption
+                ├── timestamp
+                └── seen
