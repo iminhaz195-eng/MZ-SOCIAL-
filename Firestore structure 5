@@ -1,0 +1,10 @@
+chats
+ └── chatId
+      └── messages
+           └── messageId
+                ├── senderId
+                ├── receiverId
+                ├── message
+                ├── type
+                ├── timestamp
+                └── seen
