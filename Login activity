@@ -1,0 +1,30 @@
+class LoginActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login)
+
+        auth = FirebaseAuth.getInstance()
+
+        val email = findViewById<EditText>(R.id.email)
+        val password = findViewById<EditText>(R.id.password)
+        val login = findViewById<Button>(R.id.login)
+
+        login.setOnClickListener {
+
+            auth.signInWithEmailAndPassword(
+                email.text.toString(),
+                password.text.toString()
+            ).addOnSuccessListener {
+
+                startActivity(Intent(this, HomeActivity::class.java))
+                finish()
+
+            }.addOnFailureListener {
+                Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}
