@@ -1,0 +1,7 @@
+stories
+ └── storyId
+      ├── userId
+      ├── mediaUrl
+      ├── mediaType
+      ├── createdAt
+      └── expiresAt
