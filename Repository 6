@@ -1,0 +1,11 @@
+class ImageMessageRepository(
+    private val storage: FirebaseStorage,
+    private val firestore: FirebaseFirestore
+) {
+
+    fun sendImageMessage() {
+        // Upload image to Firebase Storage
+        // Get download URL
+        // Save message in Firestore
+    }
+}
