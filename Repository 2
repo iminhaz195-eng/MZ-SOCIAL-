@@ -1,0 +1,18 @@
+class ForgotPasswordRepository(
+    private val auth: FirebaseAuth
+) {
+
+    fun resetPassword(
+        email: String,
+        onSuccess: () -> Unit,
+        onError: (String) -> Unit
+    ) {
+        auth.sendPasswordResetEmail(email)
+            .addOnSuccessListener {
+                onSuccess()
+            }
+            .addOnFailureListener {
+                onError(it.message ?: "Unknown error")
+            }
+    }
+}
