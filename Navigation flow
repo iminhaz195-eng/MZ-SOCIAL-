@@ -1,0 +1,14 @@
+Splash
+   │
+   ▼
+Login / Register
+   │
+   ▼
+Home
+ ├── Feed
+ ├── Stories
+ ├── Reels
+ ├── Chat
+ ├── Search
+ ├── Notifications
+ └── Profile
