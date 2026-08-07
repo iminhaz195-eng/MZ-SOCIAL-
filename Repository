@@ -1,0 +1,25 @@
+class LikeRepository(
+    private val firestore: FirebaseFirestore
+) {
+
+    fun toggleLike(postId: String, userId: String) {
+        val likeRef = firestore.collection("likes")
+            .document(postId)
+            .collection("users")
+            .document(userId)
+
+        likeRef.get().addOnSuccessListener {
+
+            if (it.exists()) {
+                likeRef.delete()
+            } else {
+                likeRef.set(
+                    mapOf(
+                        "liked" to true,
+                        "timestamp" to System.currentTimeMillis()
+                    )
+                )
+            }
+        }
+    }
+}
