@@ -1,0 +1,45 @@
+class VoiceMessageRepository(
+    private val storage: FirebaseStorage,
+    private val firestore: FirebaseFirestore
+) {
+
+    fun uploadVoice(
+        fileUri: Uri,
+        chatId: String,
+        message: VoiceMessage,
+        onSuccess: () -> Unit,
+        onError: (Exception) -> Unit
+    ) {
+        val fileRef = storage.reference
+            .child("chat_audio/${message.messageId}.m4a")
+
+        fileRef.putFile(fileUri)
+            .continueWithTask { task ->
+                if (!task.isSuccessful) {
+                    throw task.exception ?: Exception("Upload failed")
+                }
+                fileRef.downloadUrl
+            }
+            .addOnSuccessListener { downloadUri ->
+
+                val data = message.copy(
+                    audioUrl = downloadUri.toString()
+                )
+
+                firestore.collection("chats")
+                    .document(chatId)
+                    .collection("messages")
+                    .document(message.messageId)
+                    .set(data)
+                    .addOnSuccessListener {
+                        onSuccess()
+                    }
+                    .addOnFailureListener {
+                        onError(it)
+                    }
+            }
+            .addOnFailureListener {
+                onError(it)
+            }
+    }
+}
