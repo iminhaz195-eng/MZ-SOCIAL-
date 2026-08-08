@@ -1,0 +1,9 @@
+data class VoiceMessage(
+    val messageId: String = "",
+    val senderId: String = "",
+    val receiverId: String = "",
+    val audioUrl: String = "",
+    val duration: Long = 0L,
+    val timestamp: Long = System.currentTimeMillis(),
+    val seen: Boolean = false
+)
