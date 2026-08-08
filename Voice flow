@@ -1,0 +1,15 @@
+🎤 Start Recording
+        ↓
+MediaRecorder
+        ↓
+⏹ Stop
+        ↓
+.m4a File
+        ↓
+Firebase Storage
+        ↓
+Audio Download URL
+        ↓
+Firestore
+        ↓
+💬 Chat Message
