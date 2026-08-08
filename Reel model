@@ -1,0 +1,9 @@
+data class Reel(
+    val reelId: String = "",
+    val userId: String = "",
+    val videoUrl: String = "",
+    val caption: String = "",
+    val createdAt: Long = System.currentTimeMillis(),
+    val likeCount: Long = 0,
+    val commentCount: Long = 0
+)
