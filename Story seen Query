@@ -1,0 +1,21 @@
+fun getActiveStories(
+    onResult: (List<Story>) -> Unit,
+    onError: (Exception) -> Unit
+) {
+    val now = System.currentTimeMillis()
+
+    firestore.collection("stories")
+        .whereGreaterThan("expiresAt", now)
+        .get()
+        .addOnSuccessListener { snapshot ->
+
+            val stories = snapshot.documents.mapNotNull {
+                it.toObject(Story::class.java)
+            }
+
+            onResult(stories)
+        }
+        .addOnFailureListener {
+            onError(it)
+        }
+}
