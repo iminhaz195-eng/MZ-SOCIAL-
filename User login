@@ -1,0 +1,8 @@
+val uid = FirebaseAuth
+    .getInstance()
+    .currentUser
+    ?.uid
+
+if (uid != null) {
+    CrashReporter.setUser(uid)
+}
