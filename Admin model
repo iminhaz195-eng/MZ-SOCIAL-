@@ -1,0 +1,6 @@
+data class AdminUser(
+    val uid: String = "",
+    val name: String = "",
+    val username: String = "",
+    val blocked: Boolean = false
+)
