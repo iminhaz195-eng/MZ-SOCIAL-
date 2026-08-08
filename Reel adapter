@@ -1,0 +1,46 @@
+class ReelsAdapter(
+    private val reels: List<Reel>
+) : RecyclerView.Adapter<ReelsAdapter.ReelViewHolder>() {
+
+    class ReelViewHolder(
+        view: View
+    ) : RecyclerView.ViewHolder(view) {
+
+        val videoView: VideoView =
+            view.findViewById(R.id.reelVideo)
+
+        val caption: TextView =
+            view.findViewById(R.id.reelCaption)
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ReelViewHolder {
+
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_reel, parent, false)
+
+        return ReelViewHolder(view)
+    }
+
+    override fun onBindViewHolder(
+        holder: ReelViewHolder,
+        position: Int
+    ) {
+        val reel = reels[position]
+
+        holder.caption.text = reel.caption
+
+        holder.videoView.setVideoURI(
+            Uri.parse(reel.videoUrl)
+        )
+
+        holder.videoView.setOnPreparedListener {
+            it.isLooping = true
+            holder.videoView.start()
+        }
+    }
+
+    override fun getItemCount(): Int = reels.size
+}
