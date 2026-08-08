@@ -1,0 +1,8 @@
+reels
+ └── reelId
+      ├── userId
+      ├── videoUrl
+      ├── caption
+      ├── createdAt
+      ├── likeCount
+      └── commentCount
