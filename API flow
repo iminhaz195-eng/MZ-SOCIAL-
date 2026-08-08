@@ -1,0 +1,13 @@
+📱 Android
+    ↓
+Retrofit
+    ↓
+HTTPS
+    ↓
+Backend API
+    ↓
+Database
+    ↓
+JSON Response
+    ↓
+Android UI
