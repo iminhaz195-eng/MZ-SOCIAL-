@@ -1,0 +1,12 @@
+class UserRepository(
+    private val api: SocialApi
+) {
+
+    suspend fun getUsers(): List<ApiUser> {
+        return api.getUsers()
+    }
+
+    suspend fun getUser(id: String): ApiUser {
+        return api.getUser(id)
+    }
+}
