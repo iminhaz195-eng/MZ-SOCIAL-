@@ -1,0 +1,10 @@
+interface SocialApi {
+
+    @GET("users")
+    suspend fun getUsers(): List<ApiUser>
+
+    @GET("users/{id}")
+    suspend fun getUser(
+        @Path("id") id: String
+    ): ApiUser
+}
