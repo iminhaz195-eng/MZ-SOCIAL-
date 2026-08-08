@@ -1,0 +1,6 @@
+data class ApiUser(
+    val id: String,
+    val name: String,
+    val username: String,
+    val profilePhoto: String?
+)
