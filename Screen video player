@@ -1,0 +1,11 @@
+val intent = Intent(
+    this,
+    VideoPlayerActivity::class.java
+)
+
+intent.putExtra(
+    "videoUrl",
+    reel.videoUrl
+)
+
+startActivity(intent)
