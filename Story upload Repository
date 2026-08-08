@@ -1,0 +1,58 @@
+class StoryRepository(
+    private val storage: FirebaseStorage,
+    private val firestore: FirebaseFirestore
+) {
+
+    fun uploadStory(
+        uri: Uri,
+        userId: String,
+        mediaType: String,
+        caption: String,
+        onSuccess: () -> Unit,
+        onError: (Exception) -> Unit
+    ) {
+        val storyId = firestore
+            .collection("stories")
+            .document()
+            .id
+
+        val fileRef = storage.reference
+            .child("stories/$userId/$storyId")
+
+        fileRef.putFile(uri)
+            .continueWithTask { task ->
+                if (!task.isSuccessful) {
+                    throw task.exception ?: Exception("Upload failed")
+                }
+
+                fileRef.downloadUrl
+            }
+            .addOnSuccessListener { downloadUri ->
+
+                val now = System.currentTimeMillis()
+
+                val story = Story(
+                    storyId = storyId,
+                    userId = userId,
+                    mediaUrl = downloadUri.toString(),
+                    mediaType = mediaType,
+                    caption = caption,
+                    createdAt = now,
+                    expiresAt = now + 24 * 60 * 60 * 1000
+                )
+
+                firestore.collection("stories")
+                    .document(storyId)
+                    .set(story)
+                    .addOnSuccessListener {
+                        onSuccess()
+                    }
+                    .addOnFailureListener {
+                        onError(it)
+                    }
+            }
+            .addOnFailureListener {
+                onError(it)
+            }
+    }
+}
