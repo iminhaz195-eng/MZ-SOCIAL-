@@ -1,0 +1,9 @@
+Login
+  ↓
+Backend
+  ↓
+Access Token
+  ↓
+Android App
+  ↓
+Authorization: Bearer <token>
