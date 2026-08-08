@@ -1,0 +1,9 @@
+Firebase Storage
+      ↓
+Video URL
+      ↓
+VideoPlayerActivity
+      ↓
+Media3 ExoPlayer
+      ↓
+▶️ Play
