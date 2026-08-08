@@ -1,0 +1,94 @@
+class VoiceMessageActivity : AppCompatActivity() {
+
+    private var recorder: MediaRecorder? = null
+    private var audioFile: File? = null
+
+    private lateinit var tvStatus: TextView
+    private lateinit var btnRecord: Button
+    private lateinit var btnStop: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_voice_message)
+
+        tvStatus = findViewById(R.id.tvStatus)
+        btnRecord = findViewById(R.id.btnRecord)
+        btnStop = findViewById(R.id.btnStop)
+
+        btnRecord.setOnClickListener {
+            if (checkPermission()) {
+                startRecording()
+            } else {
+                requestPermissions(
+                    arrayOf(Manifest.permission.RECORD_AUDIO),
+                    100
+                )
+            }
+        }
+
+        btnStop.setOnClickListener {
+            stopRecording()
+        }
+    }
+
+    private fun checkPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.RECORD_AUDIO
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun startRecording() {
+
+        audioFile = File(
+            cacheDir,
+            "voice_${System.currentTimeMillis()}.m4a"
+        )
+
+        recorder = MediaRecorder(this).apply {
+            setAudioSource(MediaRecorder.AudioSource.MIC)
+            setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
+            setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+            setOutputFile(audioFile!!.absolutePath)
+
+            prepare()
+            start()
+        }
+
+        tvStatus.text = "Recording..."
+        btnRecord.isEnabled = false
+        btnStop.isEnabled = true
+    }
+
+    private fun stopRecording() {
+
+        recorder?.apply {
+            stop()
+            release()
+        }
+
+        recorder = null
+
+        tvStatus.text = "Uploading..."
+
+        btnRecord.isEnabled = true
+        btnStop.isEnabled = false
+
+        uploadAudio()
+    }
+
+    private fun uploadAudio() {
+
+        val file = audioFile ?: return
+        val uri = Uri.fromFile(file)
+
+        // এখানে Firebase Repository থেকে
+        // uploadVoice() কল করবে।
+    }
+
+    override fun onDestroy() {
+        recorder?.release()
+        recorder = null
+        super.onDestroy()
+    }
+}
