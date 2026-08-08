@@ -1,0 +1,14 @@
+Android App
+    │
+    │ HTTPS / JSON
+    ▼
+Backend API
+    │
+    ├── Authentication
+    ├── Users
+    ├── Posts
+    ├── Comments
+    └── Reports
+    │
+    ▼
+Database
