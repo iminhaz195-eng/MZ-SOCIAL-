@@ -1,0 +1,11 @@
+chats
+ └── chatId
+      └── messages
+           └── messageId
+                ├── type: "audio"
+                ├── senderId
+                ├── receiverId
+                ├── audioUrl
+                ├── duration
+                ├── timestamp
+                └── seen
