@@ -1,0 +1,20 @@
+class UserViewModel(
+    private val repository: UserRepository
+) : ViewModel() {
+
+    val users = MutableLiveData<List<ApiUser>>()
+
+    fun loadUsers() {
+
+        viewModelScope.launch {
+
+            try {
+                val result = repository.getUsers()
+                users.postValue(result)
+
+            } catch (e: Exception) {
+                // Handle API error
+            }
+        }
+    }
+}
