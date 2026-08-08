@@ -1,0 +1,6 @@
+admin/
+├── AdminActivity.kt
+├── AdminViewModel.kt
+├── AdminRepository.kt
+├── AdminUserAdapter.kt
+└── activity_admin.xml
