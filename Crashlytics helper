@@ -1,0 +1,20 @@
+object CrashReporter {
+
+    fun log(message: String) {
+        FirebaseCrashlytics
+            .getInstance()
+            .log(message)
+    }
+
+    fun setUser(userId: String) {
+        FirebaseCrashlytics
+            .getInstance()
+            .setUserId(userId)
+    }
+
+    fun recordException(exception: Throwable) {
+        FirebaseCrashlytics
+            .getInstance()
+            .recordException(exception)
+    }
+}
