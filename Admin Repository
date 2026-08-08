@@ -1,0 +1,39 @@
+class AdminRepository(
+    private val firestore: FirebaseFirestore
+) {
+
+    fun getUsers(
+        onSuccess: (List<AdminUser>) -> Unit,
+        onError: (Exception) -> Unit
+    ) {
+        firestore.collection("users")
+            .get()
+            .addOnSuccessListener { snapshot ->
+
+                val users = snapshot.documents.mapNotNull {
+                    it.toObject(AdminUser::class.java)
+                }
+
+                onSuccess(users)
+            }
+            .addOnFailureListener {
+                onError(it)
+            }
+    }
+
+    fun blockUser(
+        uid: String,
+        onSuccess: () -> Unit,
+        onError: (Exception) -> Unit
+    ) {
+        firestore.collection("users")
+            .document(uid)
+            .update("blocked", true)
+            .addOnSuccessListener {
+                onSuccess()
+            }
+            .addOnFailureListener {
+                onError(it)
+            }
+    }
+}
