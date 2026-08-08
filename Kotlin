@@ -1,0 +1,13 @@
+FirebaseMessaging.getInstance().token
+    .addOnSuccessListener { token ->
+
+        val uid = FirebaseAuth
+            .getInstance()
+            .currentUser
+            ?.uid ?: return@addOnSuccessListener
+
+        FirebaseFirestore.getInstance()
+            .collection("users")
+            .document(uid)
+            .update("fcmToken", token)
+    }
