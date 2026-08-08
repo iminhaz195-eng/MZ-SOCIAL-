@@ -1,0 +1,7 @@
+Firebase Analytics
+       │
+       ├── screen_view
+       ├── post_created
+       ├── post_liked
+       ├── story_viewed
+       └── reel_viewed
