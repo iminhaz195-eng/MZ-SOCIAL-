@@ -1,0 +1,2 @@
+analyticsManager.logPostCreated("image")
+analyticsManager.logPostCreated("video")
