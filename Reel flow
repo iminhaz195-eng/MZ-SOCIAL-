@@ -1,0 +1,13 @@
+🎥 Upload Short Video
+        ↓
+Firebase Storage
+        ↓
+Save URL → Firestore
+        ↓
+Reels Feed
+        ↓
+⬆️ / ⬇️ Swipe
+        ↓
+▶️ Auto Play
+        ↓
+❤️ Like / 💬 Comment
