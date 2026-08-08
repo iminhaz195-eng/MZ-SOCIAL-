@@ -1,0 +1,17 @@
+class ReelsViewModel(
+    private val repository: ReelsRepository
+) : ViewModel() {
+
+    val reels = MutableLiveData<List<Reel>>()
+
+    fun loadReels() {
+        repository.getReels(
+            onSuccess = {
+                reels.postValue(it)
+            },
+            onError = {
+                // Handle error
+            }
+        )
+    }
+}
