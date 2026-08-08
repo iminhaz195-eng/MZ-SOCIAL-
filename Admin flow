@@ -1,0 +1,9 @@
+Admin Login
+     ↓
+Admin Verification
+     ↓
+Admin Panel
+     ├── 👥 Users
+     ├── 🚨 Reports
+     ├── 📝 Posts
+     └── 🚫 Block User
