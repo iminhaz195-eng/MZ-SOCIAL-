@@ -1,0 +1,2 @@
+val fileRef = storage.reference
+    .child("chat_images/$userId/$messageId.jpg")
