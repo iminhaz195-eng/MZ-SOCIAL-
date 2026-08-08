@@ -1,0 +1,15 @@
+class HomeActivity : AppCompatActivity() {
+
+    private lateinit var analyticsManager: AnalyticsManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        analyticsManager =
+            AnalyticsManager(
+                FirebaseAnalytics.getInstance()
+            )
+
+        analyticsManager.logScreen("Home")
+    }
+}
