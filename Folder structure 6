@@ -1,0 +1,6 @@
+ui/
+└── chat/
+     ├── VoiceMessageActivity.kt
+     ├── VoiceMessageViewModel.kt
+     ├── VoiceMessageRepository.kt
+     └── activity_voice_message.xml
