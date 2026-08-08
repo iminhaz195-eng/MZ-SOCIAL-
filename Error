@@ -1,0 +1,8 @@
+try {
+
+    // Some operation
+
+} catch (e: Exception) {
+
+    CrashReporter.recordException(e)
+}
