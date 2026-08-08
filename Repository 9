@@ -1,0 +1,25 @@
+class ReelsRepository(
+    private val firestore: FirebaseFirestore
+) {
+
+    fun getReels(
+        onSuccess: (List<Reel>) -> Unit,
+        onError: (Exception) -> Unit
+    ) {
+        firestore.collection("reels")
+            .orderBy("createdAt", Query.Direction.DESCENDING)
+            .limit(20)
+            .get()
+            .addOnSuccessListener { snapshot ->
+
+                val reels = snapshot.documents.mapNotNull {
+                    it.toObject(Reel::class.java)
+                }
+
+                onSuccess(reels)
+            }
+            .addOnFailureListener {
+                onError(it)
+            }
+    }
+}
