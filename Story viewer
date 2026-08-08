@@ -1,0 +1,16 @@
+class StoryViewerActivity : AppCompatActivity() {
+
+    private lateinit var imageView: ImageView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_story_viewer)
+
+        imageView = findViewById(R.id.storyImage)
+
+        val mediaUrl =
+            intent.getStringExtra("mediaUrl")
+
+        // Glide/Picasso দিয়ে image load করা যাবে
+    }
+}
