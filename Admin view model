@@ -1,0 +1,29 @@
+class AdminViewModel(
+    private val repository: AdminRepository
+) : ViewModel() {
+
+    val users = MutableLiveData<List<AdminUser>>()
+
+    fun loadUsers() {
+        repository.getUsers(
+            onSuccess = {
+                users.postValue(it)
+            },
+            onError = {
+                // Handle error
+            }
+        )
+    }
+
+    fun blockUser(uid: String) {
+        repository.blockUser(
+            uid = uid,
+            onSuccess = {
+                loadUsers()
+            },
+            onError = {
+                // Handle error
+            }
+        )
+    }
+}
