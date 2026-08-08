@@ -1,0 +1,7 @@
+ui/
+└── reels/
+     ├── ReelsActivity.kt
+     ├── ReelsAdapter.kt
+     ├── ReelsViewModel.kt
+     ├── ReelsRepository.kt
+     └── activity_reels.xml
