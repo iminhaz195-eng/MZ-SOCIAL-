@@ -1,0 +1,12 @@
+User A
+  │
+  │ Sends Message
+  ▼
+Firestore / Backend
+  │
+  │ FCM
+  ▼
+User B's Phone
+  │
+  ▼
+🔔 New Message
